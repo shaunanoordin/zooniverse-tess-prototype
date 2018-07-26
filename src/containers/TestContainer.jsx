@@ -22,7 +22,6 @@ class TestContainer extends React.Component {
       const response = await panoptes.get(`/projects/${id}`);
       const project = response.body.projects[0];
       this.setState({ projectData: project, projectStatus: 'success' });
-      console.log('+++ PROJECT RECEIVED');
     } catch (error) {
       this.setState({ projectStatus: 'error' });
       console.error(`Error fetching project ${id}`, error);
@@ -30,7 +29,6 @@ class TestContainer extends React.Component {
   }
 
   render() {
-    console.log('+++ RENDER');
     return (
       <div>
         <div>Project Status: {this.state.projectStatus}</div>
