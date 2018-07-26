@@ -45,6 +45,11 @@ import Classifier from '@zooniverse/classifier';
 The `babel-polyfill` requirement is require to fix an
 `Uncaught ReferenceError: regeneratorRuntime is not defined` error.
 
+**TODO**
+- It's currently difficult to override/extend styles of imported components,
+  e.g. the Classifier, due to the randomised names. Investigate how this can be
+  solved at the Monorepo.
+
 ## Usage
 
 __Install the dependencies:__
