@@ -3,6 +3,48 @@
 An experimental Custom Front End for the Zooniverse TESS project, using
 components from the new [Zooniverse Front-End Monorepo](https://github.com/zooniverse/front-end-monorepo).
 
+## Front-End Monorepo Notes
+
+Currently, all the Panoptes `front-end-monorepo` dependencies are installed
+locally, so we need to prepare our local monorepo accordingly.
+
+- Clone the `front-end-monorepo`, into the same directory level as this TESS
+  repo. (i.e. its relative path is `../front-end-monorepo`)
+- Set up the packages.
+  - e.g. go to `../front-end-monorepo/packages/lib-classifier` and run
+    `lerna bootstrap` (assuming you have Lerna installed; see the monorepo's
+    Readme for more details.)
+- Build the packages where necessary.
+  - e.g. go to `../front-end-monorepo/packages/lib-classifier` and run
+    `npm run build` so it generates the `dist/main.js` file.
+
+**Using Panoptes.JS:**
+
+```
+//package.json dependency:
+"@zooniverse/classifier": "../front-end-monorepo/packages/lib-classifier",
+
+//Component
+import { panoptes } from '@zooniverse/panoptes-js';
+```
+
+**Preparing the Classifier:**
+
+```
+//package.json dependencies:
+"@zooniverse/panoptes-js": "../front-end-monorepo/packages/lib-panoptes-js",
+"babel-polyfill": "~6.26.0",
+
+//Entry point (e.g. src/index.js)
+import 'babel-polyfill';
+
+//Component
+import Classifier from '@zooniverse/classifier';
+```
+
+The `babel-polyfill` requirement is require to fix an
+`Uncaught ReferenceError: regeneratorRuntime is not defined` error.
+
 ## Usage
 
 __Install the dependencies:__
@@ -24,8 +66,11 @@ __When you are done, create a production-ready version of the JS bundle:__
 ## External Dependencies
 
 Core:
-- [Zooniverse Education API](https://github.com/zooniverse/education-api) service - this backend server is the backbone that manages classrooms, assignments, user roles, etc.
-- [Panoptes App setup](https://panoptes.zooniverse.org/) - standard requirement for allowing Zooniverse users to login.
+- [Zooniverse Education API](https://github.com/zooniverse/education-api)
+  service - this backend server is the backbone that manages classrooms,
+  assignments, user roles, etc.
+- [Panoptes App setup](https://panoptes.zooniverse.org/) - standard requirement
+  for allowing Zooniverse users to login.
 
 ## Credits
 

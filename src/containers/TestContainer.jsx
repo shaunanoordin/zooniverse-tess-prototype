@@ -1,6 +1,6 @@
 import React from 'react';
-import { panoptes } from '@zooniverse/panoptes-js'
-
+import { panoptes } from '@zooniverse/panoptes-js';
+import Classifier from '@zooniverse/classifier';
 
 class TestContainer extends React.Component {
   constructor() {
@@ -32,7 +32,10 @@ class TestContainer extends React.Component {
   render() {
     console.log('+++ RENDER');
     return (
-      <div>Project Status: {this.state.projectStatus}</div>
+      <div>
+        <div>Project Status: {this.state.projectStatus}</div>
+        <Classifier />
+      </div>
     );
   } 
 }

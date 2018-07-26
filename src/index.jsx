@@ -4,6 +4,7 @@ import { Router, Route } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { Provider } from 'react-redux';
 import oauth from 'panoptes-client/lib/oauth';
+import 'babel-polyfill';
 
 import App from './components/App';
 import config from './config';
