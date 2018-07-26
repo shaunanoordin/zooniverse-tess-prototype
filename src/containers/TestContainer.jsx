@@ -34,7 +34,9 @@ class TestContainer extends React.Component {
     return (
       <div>
         <div>Project Status: {this.state.projectStatus}</div>
-        <Classifier />
+        {(!this.state.projectData) ? null :
+          <Classifier project={this.state.projectData} />
+        }
       </div>
     );
   } 
