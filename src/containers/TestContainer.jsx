@@ -43,7 +43,20 @@ class TestContainer extends React.Component {
   }
 
   render() {
-    const r = (n=100)=>{ return Math.floor(Math.random()*n) }
+    const r = (n = 100) => { return Math.floor(Math.random()*n) }
+    const t = (x) => {
+      return '' +
+        ' ten twenty thirty forty fifty sixty seventy eighty ninety hundred ???'.split(' ')[Math.floor(x/10)] + ' ' +
+        ' one two three four five six seven eight nine ???'.split(' ')[Math.floor(x%10)];
+    };
+    let testData = [];
+    for (let i = 1; i <= 100; i++) {
+      testData.push({
+        x: i,
+        y: r(),
+        label: t(i),
+      });
+    }
     
     return (
       <div>
@@ -52,8 +65,9 @@ class TestContainer extends React.Component {
             {
               type: 'scatter',
               mode: 'markers',
-              x: (()=>{ let xs=[]; for(let i=0;i<100;i++) xs.push(r()); return xs })(),
-              y: (()=>{ let ys=[]; for(let i=0;i<100;i++) ys.push(r()); return ys })(),
+              x: testData.map(i => i.x),
+              y: testData.map(i => i.y),
+              text: testData.map(i => i.label),
               marker: {
                 color: 'rgb(32, 128, 128)',
                 symbol: 'star-diamond'
@@ -66,13 +80,9 @@ class TestContainer extends React.Component {
           data={[
             {
               name: "series1",
-              values: (()=>{
-                let vals = []
-                for (let i = 0; i < 100; i++) {
-                  vals.push({ x: r(), y: r() })
-                }
-                return vals
-              })()
+              values: testData.map((i) => {
+                return { x: i.x, y: i.y }
+              })
             }
           ]}
           width={600}
