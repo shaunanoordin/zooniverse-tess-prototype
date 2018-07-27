@@ -18,6 +18,28 @@ locally, so we need to prepare our local monorepo accordingly.
   - e.g. go to `../front-end-monorepo/packages/lib-classifier` and run
     `npm run build` so it generates the `dist/main.js` file.
 
+**Troubleshooting npm install:**
+
+Issue: When running `npm install` for the first time, you might _still_
+encounter a problem such as
+`npm ERR! enoent ENOENT: no such file or directory, rename '(dir_1)' -> '(dir_2)'`,
+where either dir_1 points this repo and dir_2 points to the local
+`front-end-monorepo`.
+
+Analysis: it appears that npm can't install local dependencies, or perhaps
+scoped local dependencies (i.e. `"@zooniverse/lib-classifier"`) unless the
+`/node_modules` directory _has already been created._ This may have something
+to do with the local dependencies in the node_modules folder being symlinks to
+the repo instead of copies of the repo contents.
+
+Solution:
+- Remove the local monorepo dependencies from `package.json`
+- Run `npm install`
+- Add the local monorepo dependencies again.
+- Run `npm install` again.
+
+Noted on OSX with `npm` v5.5.1.
+
 **Using Panoptes.JS:**
 
 ```
