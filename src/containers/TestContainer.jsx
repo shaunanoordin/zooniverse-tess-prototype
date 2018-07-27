@@ -5,9 +5,16 @@ import { panoptes } from '@zooniverse/panoptes-js';
 import Classifier from '@zooniverse/classifier';
 
 //Plotly Graph
+//https://www.npmjs.com/package/plotly.js-dist, https://github.com/plotly/plotly.js, https://plot.ly/javascript/
+//https://www.npmjs.com/package/react-plotlyjs
 import Plotly from 'plotly.js-dist';
 import createPlotlyComponent from 'react-plotlyjs';
 const PlotlyComponent = createPlotlyComponent(Plotly);
+
+//D3.js Graph
+//https://www.npmjs.com/package/react-d3
+//http://esbullington.github.io/react-d3-website/
+import { ScatterChart } from 'react-d3/scatterchart';
 
 class TestContainer extends React.Component {
   constructor() {
@@ -55,6 +62,26 @@ class TestContainer extends React.Component {
               name: 'bar chart example' // #bar-name
             }
           ]}
+        />
+        
+        <ScatterChart
+          data={[
+            {
+              name: "series1",
+              values: (()=>{
+                let r = ()=>{ return Math.floor(Math.random()*100) }
+                let vals = []
+                for (let i = 0; i < 100; i++) {
+                  vals.push({ x: r(), y: r() })
+                }
+                return vals
+              })()
+            }
+          ]}
+          width={600}
+          height={400}
+          yHideOrigin={false}
+          title="Scatter Chart"
         />
         
         <div>Project Status: {this.state.projectStatus}</div>

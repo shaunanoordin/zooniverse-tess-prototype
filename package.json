@@ -30,6 +30,7 @@
     "plotly.js-dist": "~1.39.3",
     "prop-types": "~15.5.10",
     "react": "~15.6.1",
+    "react-d3": "~0.4.0",
     "react-dom": "~15.6.1",
     "react-plotlyjs": "~0.4.4",
     "react-redux": "~5.0.5",
