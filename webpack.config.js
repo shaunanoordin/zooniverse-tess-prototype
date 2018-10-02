@@ -9,6 +9,10 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '/src/'),
     hot: true,
+    historyApiFallback: true,  //Allows URL rewriting/lets the app's router handle path requests.
+      //Enable if directly accessing URLs such as
+      //http://localhost:3000/my-page gives a "resource not found" instead of
+      //loading the "my-page" path.
     inline: true,
     stats: {
       colors: true,
