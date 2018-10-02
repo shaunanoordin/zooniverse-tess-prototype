@@ -18,7 +18,7 @@ export default function App() {
       </header>
       <section className="content-section">
         <Switch>
-          <Route exact path="/" component={TestContainer} />
+          <Route path="/test" component={TestContainer} />
           <Route path="/about" component={AboutLayout} />
         </Switch>
       </section>
