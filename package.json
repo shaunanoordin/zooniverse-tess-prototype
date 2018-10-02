@@ -25,6 +25,7 @@
   "dependencies": {
     "@zooniverse/classifier": "../front-end-monorepo/packages/lib-classifier",
     "@zooniverse/panoptes-js": "../front-end-monorepo/packages/lib-panoptes-js",
+    "d3": "~5.7.0",
     "history": "~4.6.3",
     "panoptes-client": "~2.7.2",
     "plotly.js-dist": "~1.39.3",
@@ -32,6 +33,7 @@
     "react": "~15.6.1",
     "react-d3": "~0.4.0",
     "react-dom": "~15.6.1",
+    "react-faux-dom": "~4.2.0",
     "react-plotlyjs": "~0.4.4",
     "react-redux": "~5.0.5",
     "react-router": "~4.1.2",
