@@ -9,6 +9,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, '/src/'),
     hot: true,
+    historyApiFallback: true,
     inline: true,
     stats: {
       colors: true,
