@@ -26,6 +26,8 @@
     "@zooniverse/classifier": "../front-end-monorepo/packages/lib-classifier",
     "@zooniverse/panoptes-js": "../front-end-monorepo/packages/lib-panoptes-js",
     "d3": "~5.7.0",
+    "d3-brush": "~1.0.6",
+    "d3-zoom": "~1.7.3",
     "history": "~4.6.3",
     "panoptes-client": "~2.7.2",
     "plotly.js-dist": "~1.39.3",
