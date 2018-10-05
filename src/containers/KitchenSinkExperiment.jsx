@@ -16,7 +16,7 @@ const PlotlyComponent = createPlotlyComponent(Plotly);
 //http://esbullington.github.io/react-d3-website/
 import { ScatterChart } from 'react-d3/scatterchart';
 
-class TestContainer extends React.Component {
+class KitchenSinkExperiment extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -104,7 +104,7 @@ class TestContainer extends React.Component {
 --------------------------------------------------------------------------------
  */
 
-TestContainer.defaultProps = {};
-TestContainer.propTypes = {};
+KitchenSinkExperiment.defaultProps = {};
+KitchenSinkExperiment.propTypes = {};
 
-export default TestContainer;
+export default KitchenSinkExperiment;
