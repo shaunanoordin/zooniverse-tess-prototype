@@ -1,3 +1,14 @@
+/*
+Native D3.js + React Faux Dom Experiment
+----------------------------------------
+
+WARNING: This experiment does NOT work properly.
+- D3.js + React Faux Dom works well for displaying static charts
+- however, attempts to add interactivity (e.g. a basic zoom/pan function) fails.
+
+--------------------------------------------------------------------------------
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -85,9 +96,11 @@ class NativeD3Experiment extends React.Component {
     //--------------------------------
     d3InterfaceLayer.call(d3.zoom()
       .scaleExtent([0.5, 4])
-      .on("zoom", () => {
+      .on("zoom", (e) => {
         //WARNING: The following does not update the d3DataLayer!
-        //d3DataLayer.attr('transform', d3.event.transform);
+        //d3.event.transform returns { k: some_number, x: NaN, y: NaN. }      
+        //  d3DataLayer.attr('transform', d3.event.transform);
+        console.log('+++ d3.zoom, d3.event.transform: ', e, d3.event.transform);
       
         this.setState({
           transform: {
