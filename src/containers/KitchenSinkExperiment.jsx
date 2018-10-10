@@ -1,3 +1,13 @@
+/*
+Kitchen Sink Experiment
+-----------------------
+
+This is a fairly unstructured experiment where we're throwing different ideas at
+the wall to see what sticks.
+
+--------------------------------------------------------------------------------
+ */
+
 import React from 'react';
 
 //Zooniverse Front-End Monorepo

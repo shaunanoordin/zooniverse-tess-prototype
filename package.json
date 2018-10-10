@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/zooniverse/zooniverse-tess-prototype",
   "dependencies": {
-    "@zooniverse/classifier": "../front-end-monorepo/packages/lib-classifier",
-    "@zooniverse/panoptes-js": "../front-end-monorepo/packages/lib-panoptes-js",
     "d3": "~5.7.0",
     "history": "~4.6.3",
     "panoptes-client": "~2.7.2",
@@ -42,7 +40,10 @@
     "redux-devtools-extension": "~2.13.2",
     "redux-logger": "~3.0.6",
     "redux-thunk": "~2.2.0",
-    "zooniverse-react-components": "github:zooniverse/Zooniverse-React-Components#v0.7.1"
+    "victory": "~0.27.2",
+    "zooniverse-react-components": "github:zooniverse/Zooniverse-React-Components#v0.7.1",
+    "@zooniverse/classifier": "../front-end-monorepo/packages/lib-classifier",
+    "@zooniverse/panoptes-js": "../front-end-monorepo/packages/lib-panoptes-js"
   },
   "devDependencies": {
     "babel-cli": "~6.24.1",
